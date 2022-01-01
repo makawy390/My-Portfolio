@@ -1,30 +1,20 @@
 
 let open = document.querySelector(".toggle .fa-bars");
 
-let closed = document.querySelector(".nav-bar .fa-times-circle")
 
-let nav = document.querySelector(".nav-bar");
+let nav = document.querySelector(".nav");
 
 
-open.onclick = function (){
-    nav.classList.add("open");
-    open.style.display = 'none';
-    
-}
-closed.onclick = function (){
-    nav.classList.remove("open");
-    open.style.display = 'flex';
-}
-
+open.addEventListener("click" , ()=>{
+    nav.classList.toggle("open");
+})
 
 let switcherLis = document.querySelectorAll(".portfolio .list-unstyled li");
 
 let imgs = document.querySelectorAll(".portfolio img");
 let arrImgs = Array.from(imgs);
 
-// console.log(arrImgs);
 
-// console.log(switcherLis);
 switcherLis.forEach((li) =>{
 li.addEventListener("click" , removeActive);
 li.addEventListener("click" , mangeImg);
